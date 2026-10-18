@@ -88,14 +88,16 @@ export default function Hero() {
           transition={{ delay: 1.2, duration: 1, ease }}
           className="mt-8 flex flex-col items-center gap-6"
         >
-          <p className="max-w-xl text-balance text-lg text-ink/80 sm:text-xl">
-            Teaching a satellite to see. <span className="text-spectrum font-medium">Galassia 5</span> puts
-            an AI brain in low Earth orbit.
-          </p>
-          <div className="glass flex items-center gap-3 rounded-full px-4 py-2 font-mono text-[11px] uppercase tracking-[0.2em]">
+          <div className="flex flex-col items-center gap-3">
+            <span className="text-spectrum font-display text-3xl font-semibold sm:text-4xl">Galassia 5</span>
+            <p className="max-w-xl text-balance text-lg text-ink/80 sm:text-xl">
+              Teaching a satellite to see. An AI brain in low Earth orbit.
+            </p>
+          </div>
+          <div className="flex items-center gap-3 rounded-full border border-white/20 bg-void/80 px-5 py-2.5 font-mono text-xs uppercase tracking-[0.2em] shadow-lg shadow-black/40 backdrop-blur-xl sm:text-[13px]">
             <span className="h-2 w-2 animate-pulse-dot rounded-full bg-flare shadow-[0_0_12px_#ff7a1a]" />
-            <span className="text-muted">Status</span>
-            <span>Pre-launch development</span>
+            <span className="text-flare">Status</span>
+            <span className="text-ink">Pre-launch development</span>
           </div>
           <div className="flex flex-wrap justify-center gap-3">
             <a href="#galassia-5" className="group rounded-full bg-ink px-6 py-3 font-medium text-void transition hover:bg-flare">
