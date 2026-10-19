@@ -6,7 +6,7 @@ import { useEffect, useRef } from "react";
 // behind the planet, so the satellite is masked by the Earth's disc while it's back there.
 const C = 200; // viewBox centre
 const EARTH_R = 100;
-const A = 172; // orbit semi-major axis
+const A = 178; // orbit semi-major axis
 const B = 58; // orbit semi-minor axis (how "open" the orbit looks)
 const TILT = -16; // degrees
 const PERIOD = 16000; // ms per orbit
@@ -35,8 +35,9 @@ export default function Orbit({ className = "" }: { className?: string }) {
     const place = (theta: number) => {
       const { x, y } = point(theta);
       const depth = Math.sin(theta); // >0 in front of Earth, <0 behind
-      const scale = 1.5 + 0.35 * depth;
-      sat.current?.setAttribute("transform", `translate(${x} ${y}) rotate(${TILT}) scale(${scale})`);
+      const scale = 0.85 + 0.25 * depth; // nearer looks bigger
+      const roll = -8 + 10 * Math.cos(theta); // slow attitude drift so it doesn't look pasted on
+      sat.current?.setAttribute("transform", `translate(${x} ${y}) rotate(${roll}) scale(${scale})`);
       if (depth < 0) holder.current?.setAttribute("mask", "url(#behind-earth)");
       else holder.current?.removeAttribute("mask");
     };
@@ -56,7 +57,7 @@ export default function Orbit({ className = "" }: { className?: string }) {
   }, []);
 
   return (
-    <svg viewBox="0 40 400 320" className={className} role="img" aria-label="Galassia 5 orbiting the Earth">
+    <svg viewBox="-30 30 460 340" className={className} role="img" aria-label="Galassia 5 orbiting the Earth">
       <defs>
         <clipPath id="earth-clip">
           <circle cx={C} cy={C} r={EARTH_R} />
@@ -70,8 +71,8 @@ export default function Orbit({ className = "" }: { className?: string }) {
           <stop offset="0.9" stopColor="#4cc9ff" stopOpacity="0.12" />
           <stop offset="1" stopColor="#4cc9ff" stopOpacity="0" />
         </radialGradient>
-        <mask id="behind-earth" maskUnits="userSpaceOnUse" x="0" y="0" width="400" height="400">
-          <rect width="400" height="400" fill="white" />
+        <mask id="behind-earth" maskUnits="userSpaceOnUse" x="-30" y="0" width="460" height="400">
+          <rect x="-30" width="460" height="400" fill="white" />
           <circle cx={C} cy={C} r={EARTH_R + 1} fill="black" />
         </mask>
       </defs>
@@ -94,11 +95,8 @@ export default function Orbit({ className = "" }: { className?: string }) {
 
       <g ref={holder}>
         <g ref={sat}>
-          {/* 6U bus with two deployed solar panels */}
-          <rect x="-15" y="-3" width="10" height="6" rx="0.5" fill="#1e3a6e" stroke="#7fa3d9" strokeWidth="0.4" />
-          <rect x="5" y="-3" width="10" height="6" rx="0.5" fill="#1e3a6e" stroke="#7fa3d9" strokeWidth="0.4" />
-          <rect x="-5" y="-4" width="10" height="8" rx="1" fill="#e9ecf5" />
-          <circle r="1.4" fill="#ff7a1a" />
+          {/* Galassia 5 render, centred on the orbit point */}
+          <image href="/images/galassia-5.png" x="-44" y="-44" width="88" height="88" />
         </g>
       </g>
     </svg>

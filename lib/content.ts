@@ -1,23 +1,40 @@
 // Copy pulled from https://www.galassia.space — edit here to update the site.
 
-// Earlier missions, oldest first. Shown under "Our history" on the home page.
+// Mission timeline, oldest first. Shown under "Our history" on the home page.
 export const history = [
   {
     title: "Galassia 1",
     focus: "Quantum communication & ionosphere",
     description:
-      "Our first satellite set out to advance quantum-based communication concepts and improve measurement of electron density in the ionosphere.",
-    launch: "Launched from the Satish Dhawan Space Centre, Andhra Pradesh, India.",
-    photo: "Galassia 1: the flight model, or the team with it",
+      "Initiated with a pioneering spirit, Galassia 1 set out to advance quantum-based communication concepts and enhance ionospheric electron measurement.",
+    launch: "Launched from the Satish Dhawan Space Centre, Andhra Pradesh, India",
+    image: "/images/galassia-1.png",
+    live: false,
   },
   {
     title: "Galassia 2",
     focus: "Multispectral remote sensing",
     description:
       "Galassia 2 carried a multispectral camera to provide remote sensing for agriculture and environmental monitoring.",
-    launch: "Launched from the Satish Dhawan Space Centre, India.",
-    photo: "Galassia 2: the flight model, or an image it captured",
+    launch: "Launched from the Satish Dhawan Space Centre near Chennai, India",
+    image: "/images/galassia-2.png",
+    live: false,
   },
+  {
+    title: "Galassia 5",
+    focus: "Space-based AI",
+    description:
+      "The newest addition to the series: a technology demonstrator designed to push the boundaries of space-based AI.",
+    launch: "In development",
+    image: "/images/galassia-5.png",
+    live: true,
+  },
+] as const;
+
+export const stats = [
+  { n: 2, suffix: "", label: "Satellites launched" },
+  { n: 550, suffix: " km", label: "Target orbit altitude" },
+  { n: 6, suffix: "U", label: "CubeSat form factor" },
 ] as const;
 
 export const objectives = [

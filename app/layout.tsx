@@ -20,8 +20,10 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Galassia 5 | AI CubeSat by NUS",
     description: "Space-based AI, built by students at NUS. Join the mission.",
+    images: [{ url: "/images/hero-orbit.jpg", width: 1760, height: 1030 }],
     type: "website",
   },
+  twitter: { card: "summary_large_image", images: ["/images/hero-orbit.jpg"] },
 };
 
 export const viewport: Viewport = { themeColor: "#05060a" };
