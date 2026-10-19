@@ -1,43 +1,22 @@
 // Copy pulled from https://www.galassia.space — edit here to update the site.
 
-export const timeline = [
+// Earlier missions, oldest first. Shown under "Our history" on the home page.
+export const history = [
   {
     title: "Galassia 1",
-    tag: "Mission",
+    focus: "Quantum communication & ionosphere",
     description:
-      "Initiated with a pioneering spirit, Galassia 1 embarked on a mission to advance quantum-based communication concepts and enhance ionospheric electron measurement.",
-    status: "completed",
-    image: "/images/galassia-1.png",
-  },
-  {
-    title: "Galassia 1 Launch",
-    tag: "Launch",
-    description:
-      "Successfully launched from the Satish Dhawan Space Centre in Andhra Pradesh, India.",
-    status: "completed",
+      "Our first satellite set out to advance quantum-based communication concepts and improve measurement of electron density in the ionosphere.",
+    launch: "Launched from the Satish Dhawan Space Centre, Andhra Pradesh, India.",
+    photo: "Galassia 1: the flight model, or the team with it",
   },
   {
     title: "Galassia 2",
-    tag: "Mission",
+    focus: "Multispectral remote sensing",
     description:
-      "Galassia 2's journey began with the vision to provide remote sensing for agriculture and environmental monitoring through the implementation of a multispectral camera.",
-    status: "completed",
-    image: "/images/galassia-2.png",
-  },
-  {
-    title: "Galassia 2 Launch",
-    tag: "Launch",
-    description:
-      "Successfully launched into orbit from the Satish Dhawan Space Centre near Chennai in southern India.",
-    status: "completed",
-  },
-  {
-    title: "Galassia 5",
-    tag: "In development",
-    description:
-      "The newest addition to the series and a cutting-edge technology demonstrator, designed to push the boundaries of space-based AI.",
-    status: "in-progress",
-    image: "/images/galassia-5.png",
+      "Galassia 2 carried a multispectral camera to provide remote sensing for agriculture and environmental monitoring.",
+    launch: "Launched from the Satish Dhawan Space Centre, India.",
+    photo: "Galassia 2: the flight model, or an image it captured",
   },
 ] as const;
 
@@ -95,17 +74,6 @@ export const specs = [
   { title: "Orbit", value: "550 km SSO", lines: ["Sun-synchronous orbit for optimal Earth observation"] },
 ] as const;
 
-export const ticker = [
-  "6U CubeSat",
-  "550 km sun-synchronous orbit",
-  "Ku-band downlink",
-  "Hailo-8L neural processor",
-  "YOLOv8 onboard",
-  "75 W peak power",
-  "3-axis stabilized",
-  "Made at NUS",
-];
-
 // Sub-teams applicants can pick from. Adjust to match how the team is actually organised.
 export const teams = [
   { id: "payload-ai", name: "Payload & AI", blurb: "Train and deploy vessel-detection models on the Hailo-8L at the edge of space." },
@@ -118,3 +86,10 @@ export const teams = [
 ] as const;
 
 export const years = ["Year 1", "Year 2", "Year 3", "Year 4", "Year 5+", "Masters", "PhD"] as const;
+
+// Team page. Replace the placeholder names and roles with the real ones.
+export const leadership = [
+  { name: "Name", role: "Project lead" },
+  { name: "Name", role: "Faculty advisor" },
+  { name: "Name", role: "Systems engineering lead" },
+] as const;

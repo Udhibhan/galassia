@@ -67,9 +67,8 @@ export default function ApplyForm() {
   }
 
   return (
-    <div id="apply" className="relative mx-auto max-w-3xl scroll-mt-24">
-      <div className="absolute -inset-px rounded-[28px] bg-gradient-to-b from-white/15 via-white/5 to-transparent" />
-      <div className="relative rounded-[28px] bg-deep/95 p-6 backdrop-blur-xl sm:p-10">
+    <div id="apply" className="scroll-mt-24">
+      <div className="rounded-2xl border border-line bg-deep/95 p-6 sm:p-8">
         <AnimatePresence mode="wait">
           {state.kind === "done" ? (
             <motion.div
@@ -78,17 +77,12 @@ export default function ApplyForm() {
               animate={{ opacity: 1, scale: 1 }}
               className="flex flex-col items-center py-16 text-center"
             >
-              <motion.div
-                initial={{ y: 0 }}
-                animate={{ y: [-0, -12, 0] }}
-                transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
-                className="mb-8 grid h-20 w-20 place-items-center rounded-full bg-spectrum p-[2px]"
-              >
-                <div className="grid h-full w-full place-items-center rounded-full bg-deep text-3xl">🛰️</div>
-              </motion.div>
+              <div className="mb-6 grid h-14 w-14 place-items-center rounded-full border border-flare/50 text-2xl text-flare">
+                ✓
+              </div>
               <h3 className="mb-3 font-display text-3xl font-medium">Application received.</h3>
               <p className="max-w-md text-muted">
-                Thanks for applying to Galassia 5. We&apos;ll reach out to your NUS email soon. Clear skies!
+                Thanks for applying to Galassia 5. We&apos;ll reach out to your NUS email soon.
               </p>
             </motion.div>
           ) : (
@@ -232,7 +226,7 @@ export default function ApplyForm() {
               >
                 {state.kind === "sending" ? "Transmitting…" : "Submit application"}
                 {state.kind !== "sending" && (
-                  <span className="ml-2 inline-block transition group-hover:translate-x-1 group-hover:-translate-y-1">↗</span>
+                  <span className="ml-2 inline-block transition group-hover:translate-x-1">→</span>
                 )}
               </button>
               <p className="text-center text-xs text-muted">

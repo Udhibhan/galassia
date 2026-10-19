@@ -1,8 +1,8 @@
 # Galassia 5: website and recruitment
 
-Scroll-animated site for **Galassia 5**, the AI CubeSat from the National University of Singapore, with an application form that stores applicants in Supabase.
+Site for **Galassia 5**, the AI CubeSat from the National University of Singapore, with an application form that stores applicants in Supabase.
 
-**Stack:** Next.js 14 (App Router) · TypeScript · Tailwind · Framer Motion · Lenis smooth scroll · Supabase (Postgres + Storage) · Vercel
+**Stack:** Next.js 14 (App Router) · TypeScript · Tailwind · Framer Motion · Supabase (Postgres + Storage) · Vercel
 
 ## Run locally
 
@@ -48,7 +48,7 @@ npm run dev                  # http://localhost:3000
 
 ## Editing content
 
-All copy (timeline, objectives, specs, sub-teams, years) lives in [`lib/content.ts`](lib/content.ts). Images are in `public/images/`.
+All copy (history, objectives, specs, sub-teams, leadership, years) lives in [`lib/content.ts`](lib/content.ts). Images are in `public/images/`.
 
 ## Supabase free-tier notes
 
